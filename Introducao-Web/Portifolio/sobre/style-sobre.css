@@ -1,0 +1,292 @@
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../fonts/ClashDisplay-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../fonts/ClashDisplay-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../fonts/ClashDisplay-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ClashDisplay";
+  src: url("../fonts/ClashDisplay-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  text-align: center;
+  color: white;
+}
+
+.autor {
+  font-family: "ClashDisplay", sans-serif;
+  font-size: 30px;
+  letter-spacing: 2px;
+}
+.description {
+  font-family: "ClashDisplay-Regular", sans-serif;
+  font-size: 15px;
+  margin-inline: 60px;
+  text-align: left;
+}
+
+#Voltar {
+  text-decoration: none;
+  font-family: "ClashDisplay-Regular", sans-serif;
+  color: white;
+}
+.links {
+  color: white;
+  z-index: 1;
+  position: relative;
+}
+
+.bg-video {
+  /* $ Fixa o Video no fundo */
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  /* $ Video para tras da pagina*/
+  z-index: -1;
+  /* $ Escurece o Video */
+  filter: brightness(50%);
+}
+
+.card-sobre {
+  position: relative;
+  width: 700px;
+  height: 540px;
+  margin: 10px;
+
+  /* $ Flexbox */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 20px;
+  padding: 24px;
+
+  /* $ Fundo do card-sobre */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(15, 15, 15, 0.25) 100%
+  );
+
+  /* $ Desfoque */
+  backdrop-filter: blur(20px);
+
+  /* $ Sombras no fundo do card */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* @ Borda Superior/esquerda */
+.card-sobre:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 20px;
+
+  /* $ Borda Superior/esquerda */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* $ Mascara de Gradiente */
+  -webkit-mask: linear-gradient(135deg, #000 0%, transparent 60%);
+  mask: linear-gradient(135deg, #000 0%, transparent 60%);
+}
+
+/* @ Borda Inferior/direita */
+.card-sobre:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 20px;
+
+  /* $ Borda Inferior/direita */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* $ Mascara de Gradiente */
+  -webkit-mask: linear-gradient(135deg, transparent 40%, #000 100%);
+  mask: linear-gradient(135deg, transparent 40%, #000 100%);
+}
+
+.menu {
+  margin-top: 40px;
+}
+
+li {
+  position: relative;
+  border-radius: 25px;
+  margin: 6px;
+  padding: 12px;
+  width: 200px;
+  list-style: none;
+  transition: 0.1s ease;
+  z-index: 1;
+
+  /* $ Desfoque */
+  backdrop-filter: blur(20px);
+}
+
+li:hover {
+  transform: translateY(-2px);
+  background-color: rgba(255, 255, 255, 0.205);
+  color: black;
+}
+
+/* @ Borda Superior/esquerda */
+li:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 25px;
+
+  /* $ Borda Superior/esquerda */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* $ Mascara de Gradiente */
+  -webkit-mask: linear-gradient(135deg, #000 0%, transparent 60%);
+  mask: linear-gradient(135deg, #000 0%, transparent 60%);
+
+  /* $ faz com que o mouse nao interaja com o elemento  */
+  pointer-events: none;
+}
+
+/* @ Borda Inferior/direita */
+li:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 25px;
+
+  /* $ Borda Inferior/direita */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* $ Mascara de Gradiente */
+  -webkit-mask: linear-gradient(135deg, transparent 40%, #000 100%);
+  mask: linear-gradient(135deg, transparent 40%, #000 100%);
+
+  /* $ faz com que o mouse nao interaja com o elemento  */
+  pointer-events: none;
+}
+
+.perfil {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.25);
+  object-fit: cover;
+}
+
+.card-logos {
+  position: relative;
+  width: 300px;
+  height: 100px;
+
+  /* $ Flexbox */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  border-radius: 20px;
+  padding: 24px;
+
+  /* $ Fundo do card-principal */
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(15, 15, 15, 0.25) 100%
+  );
+
+  /* $ Desfoque */
+  backdrop-filter: blur(20px);
+
+  /* $ Sombras no fundo do card */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* @ Borda Superior/esquerda */
+.card-logos:before {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 25px;
+
+  /* $ Borda Superior/esquerda */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* $ Mascara de Gradiente */
+  -webkit-mask: linear-gradient(135deg, #000 0%, transparent 60%);
+  mask: linear-gradient(135deg, #000 0%, transparent 60%);
+}
+
+/* @ Borda Inferior/direita */
+.card-logos:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  border-radius: 25px;
+
+  /* $ Borda Inferior/direita */
+  border: 2px solid rgba(255, 255, 255, 0.25);
+
+  /* $ Mascara de Gradiente */
+  -webkit-mask: linear-gradient(135deg, transparent 40%, #000 100%);
+  mask: linear-gradient(135deg, transparent 40%, #000 100%);
+}
+
+.logo-end {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  z-index: 1;
+
+  transition: 0.1s ease;
+}
+
+.logo-end:hover {
+  transform: translateY(-2px);
+}
+
+.rodape {
+  margin: 10px;
+  font-family: "ClashDisplay-Regular", sans-serif;
+  font-size: 13px;
+}

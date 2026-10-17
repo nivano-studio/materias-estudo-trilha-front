@@ -1,0 +1,50 @@
+/* * <- seletor universal  (aplica em toda a pagina*/
+/* $ paddin: 0 <- Remove o preenchimento interno padrão de todos os elementos.*/
+/* $ margin: 0 <- Remove a margem externa padrão de todos os elementos */
+/* $ box-sizing: border-box <- impede que a borda atribuida ultrapasee o tamanho definido do width x height */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.divPai {
+  width: 100vw;
+  height: 100vh;
+  background-color: darkgrey;
+  /* $ display: block; <- faz com que os elementos fiquem em colunas e faz com que os elementos filhos (.retangulo) preencham toda a largura disponivel*/
+  /* $ display: flex; <- faz com que os elementos fiquem em linha e faz com que os elementos filhos (.retangulo) preencham toda a altura disponivel*/
+  /* $ */
+  display: flex;
+  /* $ Muda o direcionamento dos elementos filhos (auto, rom, column, column-reverse)*/
+  flex-direction: row;
+  /* $ Ao invez de usar o margin pode ser ultilizado o gap para colocar espaçamento entre os elementos filhos*/
+  gap: 10px 20px;
+  /* $ Alinhamento dos elementos filhos (start, center, end space-between, space-around) */
+  align-items: center;
+  justify-content: center;
+  /* @ Controle na resposividade (altera entre column e roms */
+  flex-wrap: wrap;
+  /* % flex-flow: row wrap <- Junção de flex-direction e flex-wrap */
+}
+.retangulo {
+  background-color: blue;
+  color: aliceblue;
+  width: 100px;
+  height: 100px;
+  /* ! margin: 10px; */
+  /* @ flex: 1 = width: 100% (Preencher toda largura disponivel os elementos filhos*/
+}
+
+.rt1 {
+  /* flex: 1; */
+  /* @ Fazer alinhamento de apenas 1 elemento expecifico */
+  /* $ alignself: start; */
+  /* $ justify-self: start; */
+}
+.rt2 {
+  /* flex: 2; */
+}
+.rt3 {
+  /* flex: 3; */
+}

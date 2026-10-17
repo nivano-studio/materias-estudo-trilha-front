@@ -1,0 +1,20 @@
+button {
+    background-color: rgba(0, 255, 42, 0.63);
+    color: black;
+    font-size: 14px;
+}
+
+/* 
+$  color <- cor do texto
+$  font-family <- fonte
+$  font-size: <- tamnho do texto
+$  font-weight <- gruzura do texto
+$  text-align <- alinhamento do texto
+*/
+p {
+    color: white;
+    font-family: serif, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-align: center;
+}
